@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManagerView" customModule="ManagementApp" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="Now-a3-Ao5"/>
+                <outlet property="nameTextField" destination="0eM-s2-eux" id="EAb-Fc-H6K"/>
+                <outlet property="receptionHoursTextField" destination="frr-IW-3IU" id="235-bv-mjd"/>
+                <outlet property="salaryTextField" destination="6Sv-lm-zRX" id="tkB-ji-Rsb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eM-s2-eux">
+                    <rect key="frame" x="5" y="5" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-lm-zRX">
+                    <rect key="frame" x="5" y="49" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="frr-IW-3IU">
+                    <rect key="frame" x="5" y="93" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Sv-lm-zRX" secondAttribute="trailing" constant="5" id="2RB-rW-ebn"/>
+                <constraint firstItem="frr-IW-3IU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="6V0-w5-qkx"/>
+                <constraint firstItem="6Sv-lm-zRX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="SZR-QB-wr6"/>
+                <constraint firstAttribute="trailing" secondItem="0eM-s2-eux" secondAttribute="trailing" constant="5" id="Weo-r7-dCs"/>
+                <constraint firstItem="0eM-s2-eux" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Z4y-pg-Kk7"/>
+                <constraint firstAttribute="trailing" secondItem="frr-IW-3IU" secondAttribute="trailing" constant="5" id="dOB-3f-WPm"/>
+                <constraint firstItem="0eM-s2-eux" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="gEl-as-5mV"/>
+                <constraint firstItem="frr-IW-3IU" firstAttribute="top" secondItem="6Sv-lm-zRX" secondAttribute="bottom" constant="10" id="sNZ-ec-Gq1"/>
+                <constraint firstItem="6Sv-lm-zRX" firstAttribute="top" secondItem="0eM-s2-eux" secondAttribute="bottom" constant="10" id="tFI-zF-STA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="2.8985507246376816" y="90.066964285714278"/>
+        </view>
+    </objects>
+</document>

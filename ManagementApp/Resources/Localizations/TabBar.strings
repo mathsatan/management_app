@@ -1,0 +1,10 @@
+/* 
+  TabBar.strings
+  ManagementApp
+
+  Created by maxim kryuchkov on 03.11.2019.
+  Copyright © 2019 maxim kryuchkov. All rights reserved.
+*/
+
+"List.Item.Title" = "List";
+"Gallery.Item.Title" = "Gallery";

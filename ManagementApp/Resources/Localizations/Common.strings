@@ -1,0 +1,30 @@
+/* 
+  Common.strings
+  ManagementApp
+
+  Created by maxim kryuchkov on 03.11.2019.
+  Copyright © 2019 maxim kryuchkov. All rights reserved.
+*/
+
+"namePlaceholder" = "Name";
+"salaryPlaceholder" = "Salary";
+"receptionHoursPlaceholder" = "Reception hours";
+"lunchTimePlaceholder" = "Lunch time";
+"workplaceNumberPlaceholder" = "Workplace number";
+"createTitle" = "Create";
+"updateTitle" = "Update";
+"managerSectionHeader" = "Managers";
+"accountantsSectionHeader" = "Accountants";
+"employeesSectionHeader" = "Employees";
+
+"nameText" = "Name: %@";
+"salaryText" = "Salary: $%@";
+"workplaceNumberText" = "Workplace: #%@";
+"receptionHoursText" = "Reception hours: %@";
+"lunchTimeText" = "Lunch time: %@";
+"accountantTypeText" = "Type: %@";
+
+"accountantTypePayrollText" = "Payroll";
+"accountantTypeMaterialsText" = "Materials";
+"doneBarButtonTitle" = "Done";
+"editBarButtonTitle" = "Edit";

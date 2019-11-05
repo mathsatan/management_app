@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountantView" customModule="ManagementApp" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="N8E-On-G0z" id="BNU-gj-t5k"/>
+                <outlet property="lunchTimeTextField" destination="KVB-QX-hoY" id="pp6-Vq-SDi"/>
+                <outlet property="nameTextField" destination="gEJ-1p-HlZ" id="nEm-aC-XQx"/>
+                <outlet property="salaryTextField" destination="DdX-0A-AUo" id="myf-H2-fQU"/>
+                <outlet property="typeTextField" destination="Mlx-Oy-qlx" id="mpP-eJ-fty"/>
+                <outlet property="workplaceNumberTextField" destination="lcK-cu-Y5d" id="oo6-Wr-XMz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="N8E-On-G0z">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-1p-HlZ">
+                    <rect key="frame" x="5" y="5" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DdX-0A-AUo">
+                    <rect key="frame" x="5" y="49" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KVB-QX-hoY">
+                    <rect key="frame" x="5" y="93" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcK-cu-Y5d">
+                    <rect key="frame" x="5" y="137" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mlx-Oy-qlx">
+                    <rect key="frame" x="5" y="181" width="404" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DdX-0A-AUo" secondAttribute="trailing" constant="5" id="2Mz-WY-76u"/>
+                <constraint firstItem="ub6-v1-BWd" firstAttribute="trailing" secondItem="lcK-cu-Y5d" secondAttribute="trailing" constant="5" id="316-tM-NMW"/>
+                <constraint firstAttribute="trailing" secondItem="gEJ-1p-HlZ" secondAttribute="trailing" constant="5" id="3YE-id-1F9"/>
+                <constraint firstItem="DdX-0A-AUo" firstAttribute="top" secondItem="gEJ-1p-HlZ" secondAttribute="bottom" constant="10" id="Jnx-Hn-jj5"/>
+                <constraint firstItem="Mlx-Oy-qlx" firstAttribute="leading" secondItem="ub6-v1-BWd" secondAttribute="leading" constant="5" id="Mzo-W7-sRz"/>
+                <constraint firstItem="Mlx-Oy-qlx" firstAttribute="top" secondItem="lcK-cu-Y5d" secondAttribute="bottom" constant="10" id="NYJ-Yl-I1c"/>
+                <constraint firstItem="KVB-QX-hoY" firstAttribute="top" secondItem="DdX-0A-AUo" secondAttribute="bottom" constant="10" id="S16-VR-S83"/>
+                <constraint firstItem="ub6-v1-BWd" firstAttribute="trailing" secondItem="KVB-QX-hoY" secondAttribute="trailing" constant="5" id="ZLX-HG-6G6"/>
+                <constraint firstItem="gEJ-1p-HlZ" firstAttribute="leading" secondItem="N8E-On-G0z" secondAttribute="leading" constant="5" id="cdn-UR-ZrK"/>
+                <constraint firstItem="DdX-0A-AUo" firstAttribute="leading" secondItem="N8E-On-G0z" secondAttribute="leading" constant="5" id="ctu-cV-Kls"/>
+                <constraint firstItem="lcK-cu-Y5d" firstAttribute="leading" secondItem="ub6-v1-BWd" secondAttribute="leading" constant="5" id="f8x-WL-CpX"/>
+                <constraint firstItem="ub6-v1-BWd" firstAttribute="trailing" secondItem="Mlx-Oy-qlx" secondAttribute="trailing" constant="5" id="fHt-ik-uD1"/>
+                <constraint firstItem="lcK-cu-Y5d" firstAttribute="top" secondItem="KVB-QX-hoY" secondAttribute="bottom" constant="10" id="qaE-c4-nnL"/>
+                <constraint firstItem="gEJ-1p-HlZ" firstAttribute="top" secondItem="N8E-On-G0z" secondAttribute="top" constant="5" id="su9-ba-JVv"/>
+                <constraint firstItem="KVB-QX-hoY" firstAttribute="leading" secondItem="ub6-v1-BWd" secondAttribute="leading" constant="5" id="vwJ-jr-074"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ub6-v1-BWd"/>
+            <point key="canvasLocation" x="2.8985507246376816" y="103.45982142857143"/>
+        </view>
+    </objects>
+</document>

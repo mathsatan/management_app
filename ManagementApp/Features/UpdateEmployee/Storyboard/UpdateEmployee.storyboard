@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Update Employee View Controller-->
+        <scene sceneID="urO-od-C5J">
+            <objects>
+                <viewController storyboardIdentifier="UpdateEmployeeViewController" modalTransitionStyle="crossDissolve" id="CmC-a8-KsE" customClass="UpdateEmployeeViewController" customModule="ManagementApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rpS-RQ-HBg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72R-2L-KLQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="prn-Sc-la3"/>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OJv-sJ-Hdq">
+                                <rect key="frame" x="10" y="54" width="580" height="32"/>
+                                <segments>
+                                    <segment title="Accountant"/>
+                                    <segment title="Employee"/>
+                                    <segment title="Manager"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChangedAction:" destination="CmC-a8-KsE" eventType="valueChanged" id="2ss-X2-fWR"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYR-EG-yKj" customClass="AccountantView" customModule="ManagementApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="95" width="580" height="495"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvi-0b-cJ9" customClass="EmployeeView" customModule="ManagementApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="95" width="580" height="495"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2b-LS-pvD" customClass="ManagerView" customModule="ManagementApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="95" width="580" height="495"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bj7-nl-XrQ" firstAttribute="trailing" secondItem="OJv-sJ-Hdq" secondAttribute="trailing" constant="10" id="3Ef-vf-9Sa"/>
+                            <constraint firstItem="lvi-0b-cJ9" firstAttribute="trailing" secondItem="OJv-sJ-Hdq" secondAttribute="trailing" id="5wO-Gb-hMh"/>
+                            <constraint firstItem="GYR-EG-yKj" firstAttribute="trailing" secondItem="OJv-sJ-Hdq" secondAttribute="trailing" id="8f7-JI-iXF"/>
+                            <constraint firstItem="lvi-0b-cJ9" firstAttribute="leading" secondItem="OJv-sJ-Hdq" secondAttribute="leading" id="Csx-Rh-SlJ"/>
+                            <constraint firstItem="f2b-LS-pvD" firstAttribute="top" secondItem="OJv-sJ-Hdq" secondAttribute="bottom" constant="10" id="H3A-Mt-8Kh"/>
+                            <constraint firstItem="bj7-nl-XrQ" firstAttribute="bottom" secondItem="lvi-0b-cJ9" secondAttribute="bottom" constant="10" id="Hys-Sj-9IH"/>
+                            <constraint firstItem="OJv-sJ-Hdq" firstAttribute="top" secondItem="72R-2L-KLQ" secondAttribute="bottom" constant="10" id="KMH-1D-f6f"/>
+                            <constraint firstItem="bj7-nl-XrQ" firstAttribute="bottom" secondItem="GYR-EG-yKj" secondAttribute="bottom" constant="10" id="L9o-C5-VGQ"/>
+                            <constraint firstItem="72R-2L-KLQ" firstAttribute="leading" secondItem="bj7-nl-XrQ" secondAttribute="leading" id="LLf-Tn-xiZ"/>
+                            <constraint firstItem="OJv-sJ-Hdq" firstAttribute="leading" secondItem="bj7-nl-XrQ" secondAttribute="leading" constant="10" id="LVE-3A-tXe"/>
+                            <constraint firstItem="GYR-EG-yKj" firstAttribute="leading" secondItem="OJv-sJ-Hdq" secondAttribute="leading" id="N8F-hZ-jTu"/>
+                            <constraint firstItem="f2b-LS-pvD" firstAttribute="centerX" secondItem="OJv-sJ-Hdq" secondAttribute="centerX" id="Opd-LB-IqV"/>
+                            <constraint firstItem="lvi-0b-cJ9" firstAttribute="top" secondItem="OJv-sJ-Hdq" secondAttribute="bottom" constant="10" id="PXg-JW-n6H"/>
+                            <constraint firstItem="72R-2L-KLQ" firstAttribute="trailing" secondItem="bj7-nl-XrQ" secondAttribute="trailing" id="RqP-S7-pvE"/>
+                            <constraint firstItem="GYR-EG-yKj" firstAttribute="top" secondItem="OJv-sJ-Hdq" secondAttribute="bottom" constant="10" id="VZb-Pp-sBA"/>
+                            <constraint firstItem="f2b-LS-pvD" firstAttribute="trailing" secondItem="OJv-sJ-Hdq" secondAttribute="trailing" id="WBn-dk-ni0"/>
+                            <constraint firstItem="72R-2L-KLQ" firstAttribute="top" secondItem="bj7-nl-XrQ" secondAttribute="top" id="dqd-9j-JVm"/>
+                            <constraint firstItem="bj7-nl-XrQ" firstAttribute="bottom" secondItem="f2b-LS-pvD" secondAttribute="bottom" constant="10" id="hZe-zb-C40"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bj7-nl-XrQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountantView" destination="GYR-EG-yKj" id="lZB-Pc-Hi9"/>
+                        <outlet property="employeeView" destination="lvi-0b-cJ9" id="HFt-hD-fpO"/>
+                        <outlet property="managerView" destination="f2b-LS-pvD" id="bKK-O9-U9k"/>
+                        <outlet property="topNavigationItem" destination="prn-Sc-la3" id="zYO-uN-n81"/>
+                        <outlet property="typeSegmentedControl" destination="OJv-sJ-Hdq" id="6nf-4A-cA2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJI-8C-Xcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="100"/>
+        </scene>
+    </scenes>
+</document>
