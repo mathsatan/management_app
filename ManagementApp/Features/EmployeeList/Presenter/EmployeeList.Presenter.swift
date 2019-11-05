@@ -128,7 +128,11 @@ private extension EmployeeList.Presenter {
 
 extension EmployeeList.Presenter: UpdateEmployeePresenterOutput {
     
-    func didUpdateEntity(_ presenter: UpdateEmployeePresenting, entity: UpdateEmployee.Entity) {
+    func didCreateEntity(_ presenter: UpdateEmployeePresenting, entity: UpdateEmployee.Entity) {
         interactor.insert(item: entity)
+    }
+    
+    func didUpdateEntity(_ presenter: UpdateEmployeePresenting, entity: UpdateEmployee.Entity) {
+        interactor.update(item: entity)
     }
 }

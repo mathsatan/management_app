@@ -10,6 +10,7 @@ import UIKit
 
 protocol UpdateEmployeePresenterOutput: AnyObject {
     
+    func didCreateEntity(_ presenter: UpdateEmployeePresenting, entity: UpdateEmployee.Entity)
     func didUpdateEntity(_ presenter: UpdateEmployeePresenting, entity: UpdateEmployee.Entity)
 }
 
@@ -67,7 +68,12 @@ extension UpdateEmployee.Presenter: UpdateEmployeePresenting {
     }
     
     func didTapSaveButton() {
-        presenterOutput?.didUpdateEntity(self, entity: interactor.entity)
+        switch interactor.mode {
+        case .create:
+            presenterOutput?.didCreateEntity(self, entity: interactor.entity)
+        case .update:
+            presenterOutput?.didUpdateEntity(self, entity: interactor.entity)
+        }
         router.close()
     }
     

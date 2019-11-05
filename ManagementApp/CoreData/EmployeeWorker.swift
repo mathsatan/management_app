@@ -39,6 +39,31 @@ final class EmployeeWorker: NSObject {
         }
     }
     
+    func update(item: EmployeeEntity, onComplete: @escaping CoreDataResultCallback<Bool>) {
+        let context = coreDataStack.mainContext
+        switch item.item {
+        case .accountant(let data):
+            guard let accountant = fetchedObjects[item.id] as? Accountant else {
+                onComplete(.success(false))
+                return
+            }
+            _ = copyAccountantData(from: data, to: accountant, orderNumber: nil)
+        case .employee(let data):
+            guard let employee = fetchedObjects[item.id] as? Employee else {
+                onComplete(.success(false))
+                return
+            }
+            _ = copyEmployeeData(from: data, to: employee, orderNumber: nil)
+        case .manager(let data):
+            guard let manager = fetchedObjects[item.id] as? Manager else {
+                onComplete(.success(false))
+                return
+            }
+            _ = copyManagerData(from: data, to: manager, orderNumber: nil)
+        }
+        saveContextIfNeeded(context, onComplete: onComplete)
+    }
+    
     func assignIndexes(to persons: [Person], onComplete: @escaping CoreDataResultCallback<Bool>) {
         let context = coreDataStack.mainContext
         context.perform {
@@ -47,7 +72,7 @@ final class EmployeeWorker: NSObject {
         }
     }
     
-    func update(person: Person, orderNumber: Float, onComplete: @escaping CoreDataResultCallback<Bool>) {
+    func update(orderNumber: Float, for person: Person, onComplete: @escaping CoreDataResultCallback<Bool>) {
         let context = coreDataStack.mainContext
         context.perform {
             person.orderNumber = orderNumber
@@ -135,27 +160,13 @@ private extension EmployeeWorker {
         switch entity.item {
         case .accountant(let data):
             let accountant = Accountant(entity: entityDescription, insertInto: context)
-            accountant.orderNumber = orderNumber
-            accountant.name = data.name
-            accountant.lunch_time = data.lunchTime
-            accountant.salary = data.salary
-            accountant.workplace_number = data.workplaceNumber
-            accountant.type = accountantTypes.first { $0.name == data.type.rawValue }
-            return accountant
+            return copyAccountantData(from: data, to: accountant, orderNumber: orderNumber)
         case .employee(let data):
             let employee = Employee(entity: entityDescription, insertInto: context)
-            employee.orderNumber = orderNumber
-            employee.name = data.name
-            employee.salary = data.salary
-            employee.workplace_number = data.workplaceNumber
-            return employee
+            return copyEmployeeData(from: data, to: employee, orderNumber: orderNumber)
         case .manager(let data):
             let manager = Manager(entity: entityDescription, insertInto: context)
-            manager.orderNumber = orderNumber
-            manager.name = data.name
-            manager.salary = data.salary
-            manager.reception_hours = data.receptionHours
-            return manager
+            return copyManagerData(from: data, to: manager, orderNumber: orderNumber)
         }
     }
     
@@ -168,5 +179,37 @@ private extension EmployeeWorker {
         case .manager:
             return NSEntityDescription.entity(forEntityName: "Manager", in: context)
         }
+    }
+    
+    func copyAccountantData(from accountant: EmployeeEntity.Accountant, to data: Accountant, orderNumber: Float?) -> Accountant {
+        if let orderNumber = orderNumber {
+            data.orderNumber = orderNumber
+        }
+        data.name = accountant.name
+        data.lunch_time = accountant.lunchTime
+        data.salary = accountant.salary
+        data.workplace_number = accountant.workplaceNumber
+        data.type = accountantTypes.first { $0.name == accountant.type.rawValue }
+        return data
+    }
+    
+    func copyEmployeeData(from employee: EmployeeEntity.Employee, to data: Employee, orderNumber: Float?) -> Employee {
+        if let orderNumber = orderNumber {
+            data.orderNumber = orderNumber
+        }
+        data.name = employee.name
+        data.salary = employee.salary
+        data.workplace_number = employee.workplaceNumber
+        return data
+    }
+    
+    func copyManagerData(from manager: EmployeeEntity.Manager, to data: Manager, orderNumber: Float?) -> Manager {
+        if let orderNumber = orderNumber {
+            data.orderNumber = orderNumber
+        }
+        data.name = manager.name
+        data.salary = manager.salary
+        data.reception_hours = manager.receptionHours
+        return data
     }
 }

@@ -28,10 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         _ = coreDataStack.mainContext
         
-        if let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as? UIView,
-            statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
-            statusBar.backgroundColor = .black
+        if #available(iOS 13, *) {
+        } else {
+            if let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as? UIView,
+                statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+                statusBar.backgroundColor = .black
+            }
         }
+        
         return true
     }
     

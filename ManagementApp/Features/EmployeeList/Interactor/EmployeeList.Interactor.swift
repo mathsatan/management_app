@@ -13,6 +13,7 @@ protocol EmployeeListInteracting: ListInteractor {
     func refreshItems()
     func removeItem(at indexPath: IndexPath)
     func insert(item: EmployeeList.Entity)
+    func update(item: EmployeeList.Entity)
     func moveItem(from old: IndexPath, to new: IndexPath)
 }
 
@@ -96,6 +97,19 @@ extension EmployeeList {
                 }
             }
         }
+        
+        func update(item: EmployeeList.Entity) {
+            employeeWorker.update(item: item) { [weak self] result in
+                switch result {
+                case .success(let isOk):
+                    if isOk {
+                        self?.refreshItems()
+                    }
+                case .failure(let error):
+                    print("Insertion error has occured: \(error)")
+                }
+            }
+        }
     }
 }
 
@@ -164,7 +178,7 @@ private extension EmployeeList.Interactor {
         }
         let person = employeeWorker.fetchedObjects[dataSource.item(at: old).id]
         
-        employeeWorker.update(person: person, orderNumber: updatedOrderNumber) { [weak self] result in
+        employeeWorker.update(orderNumber: updatedOrderNumber, for: person) { [weak self] result in
             switch result {
             case .success(let isOk):
                 if isOk {
