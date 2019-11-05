@@ -80,10 +80,10 @@ private extension UpdateEmployeeViewController {
         switch viewModel.mode {
         case .create:
             topNavigationItem.title = R.string.common.createTitle()
-            typeSegmentedControl.isUserInteractionEnabled = true
+            typeSegmentedControl.isEnabled = true
         case .update:
             topNavigationItem.title = R.string.common.updateTitle()
-            typeSegmentedControl.isUserInteractionEnabled = false
+            typeSegmentedControl.isEnabled = false
         }
         typeSegmentedControl.selectedSegmentIndex = viewModel.segment
         
