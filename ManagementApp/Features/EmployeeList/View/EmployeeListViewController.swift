@@ -61,7 +61,7 @@ private extension EmployeeListViewController {
 
     func render(viewModel: EmployeeListViewController.ViewModel) {
         switch viewModel {
-        case .presenting:
+        case .reload:
             tableView.reloadData()
         default:
             break

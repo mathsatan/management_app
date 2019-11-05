@@ -30,8 +30,7 @@ extension EmployeeList {
 extension EmployeeListViewController {
     
     enum ViewModel {
-        case loading
-        case presenting
+        case reload
         case error(LocalizedError)
     }
 }

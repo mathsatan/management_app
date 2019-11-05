@@ -83,7 +83,7 @@ extension EmployeeList.Presenter: EmployeeListPresenting {
 extension EmployeeList.Presenter: EmployeeListInteractorOutput {
 
     func didUpdateEntity() {
-        view.viewModel = .presenting
+        view.viewModel = .reload
     }
 }
 

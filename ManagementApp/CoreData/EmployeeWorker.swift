@@ -139,6 +139,7 @@ private extension EmployeeWorker {
             employee.orderNumber = Float(fetchedObjects.count + 1)
             employee.name = data.name
             employee.salary = data.salary
+            employee.workplace_number = data.workplaceNumber
             return employee
         case .manager(let data):
             let manager = Manager(entity: entityDescription, insertInto: context)
