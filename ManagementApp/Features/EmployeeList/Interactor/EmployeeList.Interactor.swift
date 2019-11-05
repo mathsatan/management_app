@@ -85,7 +85,7 @@ extension EmployeeList {
         }
         
         func insert(item: EmployeeList.Entity) {
-            employeeWorker.insert(item: item) { [weak self] result in
+            employeeWorker.insert(item: item, isDefaultSort: employeeWorker.isDefaultSort) { [weak self] result in
                 switch result {
                 case .success(let isOk):
                     if isOk {
@@ -131,6 +131,28 @@ extension EmployeeList.Interactor: EmployeeListInteracting {
         if old == new {
             return
         }
+        if employeeWorker.isDefaultSort {
+            employeeWorker.assignIndexes(to: employeeWorker.fetchedObjects) { [weak self] result in
+                switch result {
+                case .success(let isOk):
+                    if isOk {
+                        self?.updateMovedItem(from: old, to: new)
+                    }
+                case .failure(let error):
+                    print("Moving error has occured: \(error)")
+                }
+            }
+        } else {
+            updateMovedItem(from: old, to: new)
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension EmployeeList.Interactor {
+    
+    func updateMovedItem(from old: IndexPath, to new: IndexPath) {
         let updatedOrderNumber: Float
         if new.row == 0 {
             let movedItemID = dataSource.item(at: new).id
@@ -141,6 +163,7 @@ extension EmployeeList.Interactor: EmployeeListInteracting {
             updatedOrderNumber = (employeeWorker.fetchedObjects[prev.id].orderNumber + employeeWorker.fetchedObjects[movedItemID].orderNumber) / 2.0
         }
         let person = employeeWorker.fetchedObjects[dataSource.item(at: old).id]
+        
         employeeWorker.update(person: person, orderNumber: updatedOrderNumber) { [weak self] result in
             switch result {
             case .success(let isOk):
