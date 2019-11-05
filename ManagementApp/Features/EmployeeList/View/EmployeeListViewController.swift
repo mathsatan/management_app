@@ -33,7 +33,6 @@ final class EmployeeListViewController: BaseViewController, EmployeeListView {
         super.viewDidLoad()
 
         configureView()
-        presenter.viewDidLoad()
     }
     
     private func configureView() {
@@ -63,8 +62,8 @@ private extension EmployeeListViewController {
         switch viewModel {
         case .reload:
             tableView.reloadData()
-        default:
-            break
+        case .error(let error):
+            Dropdown().showError(with: error.localizedDescription)
         }
     }
 }

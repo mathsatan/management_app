@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8344E6482371A9C000A3509B /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344E6472371A9C000A3509B /* Dropdown.swift */; };
+		8344E64B2371AAE300A3509B /* DropdownNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344E64A2371AAE300A3509B /* DropdownNotification.swift */; };
+		8344E64D2371AB2000A3509B /* DropdownNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8344E64C2371AB2000A3509B /* DropdownNotification.xib */; };
+		8344E64F2371AB2700A3509B /* DropdownState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344E64E2371AB2700A3509B /* DropdownState.swift */; };
 		8346862723702E2B00817A01 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346862623702E2B00817A01 /* BaseViewController.swift */; };
 		8346863D23705ABC00817A01 /* UINavigationController+PreferredStatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346863C23705ABC00817A01 /* UINavigationController+PreferredStatusBarStyle.swift */; };
 		8346864823705FB100817A01 /* Manager+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346863E23705FB000817A01 /* Manager+CoreDataClass.swift */; };
@@ -84,6 +88,10 @@
 
 /* Begin PBXFileReference section */
 		672704E278E44CA705517492 /* Pods-ManagementApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManagementApp.debug.xcconfig"; path = "Target Support Files/Pods-ManagementApp/Pods-ManagementApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8344E6472371A9C000A3509B /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		8344E64A2371AAE300A3509B /* DropdownNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownNotification.swift; sourceTree = "<group>"; };
+		8344E64C2371AB2000A3509B /* DropdownNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownNotification.xib; sourceTree = "<group>"; };
+		8344E64E2371AB2700A3509B /* DropdownState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownState.swift; sourceTree = "<group>"; };
 		8346862623702E2B00817A01 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8346863C23705ABC00817A01 /* UINavigationController+PreferredStatusBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+PreferredStatusBarStyle.swift"; sourceTree = "<group>"; };
 		8346863E23705FB000817A01 /* Manager+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Manager+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -180,6 +188,17 @@
 				EFD6E0E94B1A849E0D8B7937 /* Pods_ManagementApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8344E6492371AA8D00A3509B /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				8344E64E2371AB2700A3509B /* DropdownState.swift */,
+				8344E6472371A9C000A3509B /* Dropdown.swift */,
+				8344E64C2371AB2000A3509B /* DropdownNotification.xib */,
+				8344E64A2371AAE300A3509B /* DropdownNotification.swift */,
+			);
+			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		8346862523702E1B00817A01 /* ViewControllers */ = {
@@ -515,6 +534,7 @@
 		83FFA2CC236E226E0084D438 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8344E6492371AA8D00A3509B /* Dropdown */,
 				8346862523702E1B00817A01 /* ViewControllers */,
 				83FFA2DC236E35FD0084D438 /* Utilities */,
 				83FFA2DB236E35E70084D438 /* List */,
@@ -754,6 +774,7 @@
 				83848E2E236C2CA100740B27 /* TabBar.storyboard in Resources */,
 				83FFA306236F4F040084D438 /* UpdateEmployee.storyboard in Resources */,
 				83FADF5F236C255500C62B55 /* LaunchScreen.storyboard in Resources */,
+				8344E64D2371AB2000A3509B /* DropdownNotification.xib in Resources */,
 				83848E7A236C57F100740B27 /* EmployeeList.storyboard in Resources */,
 				83848E31236C2EF500740B27 /* TabBar.strings in Resources */,
 				83FADF5C236C255500C62B55 /* Assets.xcassets in Resources */,
@@ -860,10 +881,12 @@
 				83FFA2D6236E34AC0084D438 /* Command.swift in Sources */,
 				83FFA313236F5CA50084D438 /* AccountantView.swift in Sources */,
 				83848E77236C57B400740B27 /* EmployeeListView.swift in Sources */,
+				8344E6482371A9C000A3509B /* Dropdown.swift in Sources */,
 				83FFA2FC236F4C810084D438 /* UpdateEmployee.Router.swift in Sources */,
 				8346864823705FB100817A01 /* Manager+CoreDataClass.swift in Sources */,
 				83FFA2E0236E38DE0084D438 /* Array+SafeIndex.swift in Sources */,
 				83848E54236C4EB500740B27 /* NSManagedObjectContext+saveOrRollback.swift in Sources */,
+				8344E64F2371AB2700A3509B /* DropdownState.swift in Sources */,
 				83FFA2FF236F4C810084D438 /* UpdateEmployeeViewController.swift in Sources */,
 				83FADF85236C25F300C62B55 /* TabBar.Router.swift in Sources */,
 				8346864D23705FB100817A01 /* Accountant+CoreDataProperties.swift in Sources */,
@@ -881,6 +904,7 @@
 				83FFA2D4236E30250084D438 /* ManagerCell.swift in Sources */,
 				83FFA299236DD8910084D438 /* Gallery.Module.swift in Sources */,
 				83FFA295236DD8910084D438 /* GalleryViewController.swift in Sources */,
+				8344E64B2371AAE300A3509B /* DropdownNotification.swift in Sources */,
 				8346864923705FB100817A01 /* Person+CoreDataClass.swift in Sources */,
 				8346865023705FB100817A01 /* Accountant+CoreDataClass.swift in Sources */,
 				83848E2B236C2C4D00740B27 /* R.generated.swift in Sources */,

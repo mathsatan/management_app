@@ -28,3 +28,5 @@
 "accountantTypeMaterialsText" = "Materials";
 "doneBarButtonTitle" = "Done";
 "editBarButtonTitle" = "Edit";
+
+"errorNoInternetConnection" = "No internet connection";

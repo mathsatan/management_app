@@ -10,7 +10,6 @@ import UIKit
 
 protocol EmployeeListPresenting: AnyObject {
 
-    func viewDidLoad()
     func titleForHeader(in secion: Int) -> String?
     func numberOfSections() -> Int
     func numberOfItems(in section: Int) -> Int
@@ -36,8 +35,6 @@ extension EmployeeList {
 // MARK: - Presentation logic
 
 extension EmployeeList.Presenter: EmployeeListPresenting {
-
-    func viewDidLoad() {}
     
     func didTapRemoveItem(at indexPath: IndexPath) {
         interactor.removeItem(at: indexPath)
